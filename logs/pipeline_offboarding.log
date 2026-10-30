@@ -1,0 +1,639 @@
+[2026-10-30 15:13:16] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 15:13:19] Total de inativos encontrados no SIGO: 2190
+[2026-10-30 15:13:19] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 15:13:24] Processamento concluído com sucesso!
+[2026-10-30 15:13:24] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 52
+[2026-10-30 15:13:24] -> Contas para auditoria manual (`para_verificar_manual.csv`): 2138
+[2026-10-30 15:28:20] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 15:28:24] Total de inativos encontrados no SIGO: 2190
+[2026-10-30 15:28:24] Registros restantes após ignorar exceções: 54
+[2026-10-30 15:28:24] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 15:28:28] Processamento concluído com sucesso!
+[2026-10-30 15:28:28] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 52
+[2026-10-30 15:28:28] -> Contas para auditoria manual (`para_verificar_manual.csv`): 2
+[2026-10-30 15:31:00] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 15:31:03] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 15:31:03] Registros restantes após ignorar exceções: 55
+[2026-10-30 15:31:03] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 15:31:07] Processamento concluído com sucesso!
+[2026-10-30 15:31:07] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 52
+[2026-10-30 15:31:07] -> Contas para auditoria manual (`para_verificar_manual.csv`): 3
+[2026-10-30 15:32:02] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 15:32:07] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 15:32:07] Registros restantes após ignorar exceções: 52
+[2026-10-30 15:32:07] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 15:32:11] Processamento concluído com sucesso!
+[2026-10-30 15:32:11] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 52
+[2026-10-30 15:32:11] -> Contas para auditoria manual (`para_verificar_manual.csv`): 0
+[2026-10-30 16:00:16] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:00:18] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:00:18] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:00:18] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:00:23] Processamento de dados concluído com sucesso.
+[2026-10-30 16:00:23] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 52
+[2026-10-30 16:00:23] -> Contas para auditoria manual (`para_verificar_manual.csv`): 0
+[2026-10-30 16:00:23] Falha no pipeline (RuntimeError): CSV gerado, mas o script PowerShell não existe ou está vazio: C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1
+[2026-10-30 16:03:11] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:03:13] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:03:13] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:03:13] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:03:17] Processamento de dados concluído com sucesso.
+[2026-10-30 16:03:17] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 52
+[2026-10-30 16:03:17] -> Contas para auditoria manual (`para_verificar_manual.csv`): 0
+[2026-10-30 16:03:17] Iniciando a execução do script PowerShell de offboarding...
+[2026-10-30 16:05:01] Script PowerShell executado com sucesso.
+[2026-10-30 16:05:01] Saída do PowerShell:
+Procurando arquivo .env em: C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI???? - Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\..\..\.env
+Total de usuÇ­rios para processar no PowerShell: 52
+Autenticando no Microsoft Graph...
+Processando offboarding para: ALEXANDRE TAMIOZZO SAVIAN (UPN: alexandre.savian@jfi.com.br | Chapa: 410100300)
+
+  -> Acesso bloqueado com sucesso.
+
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio alexandre.savian@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: ALINE APARECIDA BRISOLLA FERREIRA (UPN: aline.ferreira@jfi.com.br | Chapa: 010221360)
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para aline.ferreira@jfi.com.br
+Processando offboarding para: ANA JULIA DE MORAIS (UPN: ana.morais@jfi.com.br | Chapa: 010318771)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f30db892-07e9-47e9-837c-80727f46fd3d, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para ana.morais@jfi.com.br
+Processando offboarding para: ANE CAROLINE MONTECINO SENA (UPN: ane.sena@jfi.com.br | Chapa: 210104195)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para ane.sena@jfi.com.br
+Processando offboarding para: ANGELICA GONCALVES CORREIA CARRAZEDO (UPN: angelica.carrazedo@jfi.com.br | Chapa: 010316383)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para angelica.carrazedo@jfi.com.br
+Processando offboarding para: BRUNA ARGUEIRO PEREIRA (UPN: bruna.pereira@jfi.com.br | Chapa: 010323166)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio bruna.pereira@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: BRUNO HENRIQUE FERNANDES RIBEIRO (UPN: bruno.ribeiro@jfi.com.br | Chapa: 701003504)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f30db892-07e9-47e9-837c-80727f46fd3d, 5b631642-bd26-49fe-bd20-1daaa972ef80, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para bruno.ribeiro@jfi.com.br
+Processando offboarding para: CARLA CRISTINA CORREA FERREIRA (UPN: carla.ferreira@jfi.com.br | Chapa: 010322106)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para carla.ferreira@jfi.com.br
+Processando offboarding para: CLEITON ELIAS SILVA (UPN: cleiton.silva@jfi.com.br | Chapa: 210101629)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f30db892-07e9-47e9-837c-80727f46fd3d, f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para cleiton.silva@jfi.com.br
+Processando offboarding para: DIEGO HENRIQUE DA SILVA BRAZ (UPN: diego.braz@jfi.com.br | Chapa: 010315225)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para diego.braz@jfi.com.br
+Processando offboarding para: FELIPE AUGUSTO PADILHA (UPN: felipe.padilha@jfi.com.br | Chapa: 701003068)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, 5b631642-bd26-49fe-bd20-1daaa972ef80, dcb1a3ae-b33f-4487-846a-a640262fadf4, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para felipe.padilha@jfi.com.br
+Processando offboarding para: FELIPE DE ASSIS NALESSO VALIO (UPN: felipe.valio@jfi.com.br | Chapa: 010321526)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para felipe.valio@jfi.com.br
+Processando offboarding para: GABRIELA ARINOS BARBOSA (UPN: gabriela.barbosa@jfi.com.br | Chapa: 210106755)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para gabriela.barbosa@jfi.com.br
+Processando offboarding para: GEAN PAULO FERNANDES PANIAGO (UPN: gean.paniago@jfi.com.br | Chapa: 210106345)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio gean.paniago@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: GIOVANNI AQUINO GASPARETTO (UPN: giovanni.gasparetto@jfi.com.br | Chapa: 010322080)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para giovanni.gasparetto@jfi.com.br
+Processando offboarding para: HEITOR FILIPE DAVID SALVIANO GARCIA DOS REIS (UPN: heitor.reis@jfi.com.br | Chapa: 210106691)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para heitor.reis@jfi.com.br
+Processando offboarding para: ISADORA DIAS BARBOZA (UPN: isadora.barboza@jfi.com.br | Chapa: 010321003)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para isadora.barboza@jfi.com.br
+Processando offboarding para: JEFFERSON ANTONIO CORGOZINHO (UPN: jefferson.corgozinho@jfi.com.br | Chapa: 210103203)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para jefferson.corgozinho@jfi.com.br
+Processando offboarding para: JOAO ARNALDO MENK GONCALVES DE CAMPOS (UPN: joao.campos@jfi.com.br | Chapa: 810100004)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio joao.campos@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: JOAO AUGUSTO GARCIA NAVES (UPN: joao.naves@jfi.com.br | Chapa: 010315258)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para joao.naves@jfi.com.br
+Processando offboarding para: JOAO PEDRO BONACI SARTORATO (UPN: joao.sartorato@jfi.com.br | Chapa: 010322521)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para joao.sartorato@jfi.com.br
+Processando offboarding para: JOAO VICTOR FERREIRA (UPN: joao.ferreira@jfi.com.br | Chapa: 010321618)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f30db892-07e9-47e9-837c-80727f46fd3d, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para joao.ferreira@jfi.com.br
+Processando offboarding para: JOICE BUENO DE OLIVEIRA (UPN: joice.oliveira@jfi.com.br | Chapa: 701002965)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para joice.oliveira@jfi.com.br
+Processando offboarding para: JULIANO PAIXAO DOS SANTOS (UPN: juliano.santos@jfi.com.br | Chapa: 010213486)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio juliano.santos@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: LEANDRO BATILI (UPN: leandro.batili@jfi.com.br | Chapa: 010412821)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para leandro.batili@jfi.com.br
+Processando offboarding para: LEONARDO FERNANDES DE LIMA (UPN: leonardo.lima@jfi.com.br | Chapa: 701000648)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio leonardo.lima@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: LUCAS DA SILVA RIBEIRO (UPN: lucas.ribeiro@jfi.com.br | Chapa: 810100049)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 6fd2c87f-b296-42f0-b197-1e91e994b900
+  -> Offboarding concluÇðdo com sucesso para lucas.ribeiro@jfi.com.br
+Processando offboarding para: LUCAS DE ANDRADE FRANCA (UPN: lucas.franca@jfi.com.br | Chapa: 010420312)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para lucas.franca@jfi.com.br
+Processando offboarding para: LUCAS MOREIRA DE SOUZA (UPN: lucas.moreira@jfi.com.br | Chapa: 010316029)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f30db892-07e9-47e9-837c-80727f46fd3d, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para lucas.moreira@jfi.com.br
+Processando offboarding para: MAIARA TEIXEIRA (UPN: maiara.teixeira@jfi.com.br | Chapa: 701003384)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para maiara.teixeira@jfi.com.br
+Processando offboarding para: MARCELO BRAZ FERREIRA (UPN: marcelo.ferreira@jfi.com.br | Chapa: 010217738)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para marcelo.ferreira@jfi.com.br
+Processando offboarding para: MARCELO DE JESUS ALELUIA (UPN: marcelo.aleluia@jfi.com.br | Chapa: 701001830)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para marcelo.aleluia@jfi.com.br
+Processando offboarding para: MARCELO FELIX LUIZ (UPN: marcelo.luiz@jfi.com.br | Chapa: 210106133)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 6fd2c87f-b296-42f0-b197-1e91e994b900, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para marcelo.luiz@jfi.com.br
+Processando offboarding para: MARCO AURELIO ROSA DE AQUINO (UPN: marco.aquino@jfi.com.br | Chapa: 701002846)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para marco.aquino@jfi.com.br
+Processando offboarding para: MARCOS ROBERTO DE MORAES (UPN: marcos.roberto@jfi.com.br | Chapa: 010205684)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para marcos.roberto@jfi.com.br
+Processando offboarding para: MARIA CLARA LOPES VICENTE (UPN: maria.vicente@jfi.com.br | Chapa: 010323086)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para maria.vicente@jfi.com.br
+Processando offboarding para: MATEUS RUBENS DE SOUZA (UPN: mateus.souza@jfi.com.br | Chapa: 010322955)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para mateus.souza@jfi.com.br
+Processando offboarding para: OSMAIR DOMINGOS DA SILVA (UPN: osmair.silva@jfi.com.br | Chapa: 010319206)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio osmair.silva@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: PAULO HENRIQUE AZEVEDO DOS SANTOS (UPN: paulo.santos@jfi.com.br | Chapa: 701002281)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para paulo.santos@jfi.com.br
+Processando offboarding para: RAFAELLE ROSATE LEITE (UPN: rafaelle.leite@jfi.com.br | Chapa: 010623118)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para rafaelle.leite@jfi.com.br
+Processando offboarding para: REBECA DA SILVA AMARAL (UPN: rebeca.amaral@jfi.com.br | Chapa: 010322103)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para rebeca.amaral@jfi.com.br
+Processando offboarding para: RENATO HENRIQUE DOS SANTOS (UPN: renato.santos@jfi.com.br | Chapa: 010318225)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 606b54a9-78d8-4298-ad8b-df6ef4481c80
+  -> Offboarding concluÇðdo com sucesso para renato.santos@jfi.com.br
+Processando offboarding para: RODRIGO PALMIERI (UPN: rodrigo.palmieri@jfi.com.br | Chapa: 701002268)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para rodrigo.palmieri@jfi.com.br
+Processando offboarding para: RUBISVAL DA SILVA NOGUEIRA (UPN: rubisval.nogueira@jfi.com.br | Chapa: 210103670)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 46c3a859-c90d-40b3-9551-6178a48d5c18, 7e31c0d9-9551-471d-836f-32ee72be4a01
+  -> Offboarding concluÇðdo com sucesso para rubisval.nogueira@jfi.com.br
+Processando offboarding para: SAM BENITEZ CARVALHO CABRAL VILELA (UPN: sam.vilela@jfi.com.br | Chapa: 210105839)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para sam.vilela@jfi.com.br
+Processando offboarding para: TAIANE DE ALMEIDA CORDEIRO (UPN: taiane.cordeiro@jfi.com.br | Chapa: 010323027)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para taiane.cordeiro@jfi.com.br
+Processando offboarding para: THALISON ENGRAF LEITE (UPN: thalison.leite@jfi.com.br | Chapa: 701002616)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para thalison.leite@jfi.com.br
+Processando offboarding para: VERONICA DA SILVA (UPN: veronica.silva@jfi.com.br | Chapa: 701003095)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para veronica.silva@jfi.com.br
+Processando offboarding para: VICENTE DE CASTRO FONSECA (UPN: vicente.fonseca@jfi.com.br | Chapa: 410100160)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: 7e31c0d9-9551-471d-836f-32ee72be4a01, 46c3a859-c90d-40b3-9551-6178a48d5c18
+  -> Offboarding concluÇðdo com sucesso para vicente.fonseca@jfi.com.br
+Processando offboarding para: VICTOR QUEIROZ VIEIRA PRANCHES (UPN: victor.pranches@jfi.com.br | Chapa: 010523082)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f30db892-07e9-47e9-837c-80727f46fd3d, f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para victor.pranches@jfi.com.br
+Processando offboarding para: WAGNER ROBERTO FARIAS DE SANTANA (UPN: wagner.santana@jfi.com.br | Chapa: 010319144)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para wagner.santana@jfi.com.br
+Processando offboarding para: WATILA OLIVEIRA SOUZA (UPN: watila.souza@jfi.com.br | Chapa: 210105026)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: a403ebcc-fae0-4ca2-8c8c-7a907fd6c235, f245ecc8-75af-4f8e-b61f-27d8114de5f3
+  -> Offboarding concluÇðdo com sucesso para watila.souza@jfi.com.br
+Pipeline PowerShell finalizada com sucesso!
+[2026-10-30 16:05:01] AUDITORIA: 52 conta(s) enviada(s) para processamento no PowerShell.
+[2026-10-30 16:07:40] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:07:44] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:07:44] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:07:44] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:07:49] Processamento de dados concluído com sucesso.
+[2026-10-30 16:07:49] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 7
+[2026-10-30 16:07:49] -> Contas para auditoria manual (`para_verificar_manual.csv`): 45
+[2026-10-30 16:07:49] Iniciando a execução do script PowerShell de offboarding...
+[2026-10-30 16:08:00] Script PowerShell executado com sucesso.
+[2026-10-30 16:08:00] Saída do PowerShell:
+Procurando arquivo .env em: C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI???? - Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\..\..\.env
+Total de usuÇ­rios para processar no PowerShell: 7
+Autenticando no Microsoft Graph...
+Processando offboarding para: ALEXANDRE TAMIOZZO SAVIAN (UPN: alexandre.savian@jfi.com.br | Chapa: 410100300)
+
+  -> Acesso bloqueado com sucesso.
+
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio alexandre.savian@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: BRUNA ARGUEIRO PEREIRA (UPN: bruna.pereira@jfi.com.br | Chapa: 010323166)
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio bruna.pereira@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: GEAN PAULO FERNANDES PANIAGO (UPN: gean.paniago@jfi.com.br | Chapa: 210106345)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio gean.paniago@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: JOAO ARNALDO MENK GONCALVES DE CAMPOS (UPN: joao.campos@jfi.com.br | Chapa: 810100004)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio joao.campos@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: JULIANO PAIXAO DOS SANTOS (UPN: juliano.santos@jfi.com.br | Chapa: 010213486)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio juliano.santos@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: LEONARDO FERNANDES DE LIMA (UPN: leonardo.lima@jfi.com.br | Chapa: 701000648)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio leonardo.lima@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: OSMAIR DOMINGOS DA SILVA (UPN: osmair.silva@jfi.com.br | Chapa: 010319206)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio osmair.silva@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Pipeline PowerShell finalizada com sucesso!
+[2026-10-30 16:08:00] AUDITORIA: 7 conta(s) enviada(s) para processamento no PowerShell.
+[2026-10-30 16:09:28] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:09:36] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:09:36] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:09:36] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:09:41] Processamento de dados concluído com sucesso.
+[2026-10-30 16:09:41] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 7
+[2026-10-30 16:09:41] -> Contas para auditoria manual (`para_verificar_manual.csv`): 45
+[2026-10-30 16:09:41] Iniciando a execução do script PowerShell de offboarding...
+[2026-10-30 16:09:41] Falha ao executar o PowerShell (código 1).
+[2026-10-30 16:09:41] Detalhes do erro PowerShell: No C:\Users\pedro.gois\JFI Silvicultura 
+Ltda\Koalipto - Suporte de TI???? - Ti\Pedro\PROJETOS
+\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:12
+1 caractere:55
++ ... st 
+"==========================================" 
+-ForegroundColor Cyan
++                                                   
+~~~~~~~~~~~~~~~~~~~~~~~
+A cadeia de caracteres nÆo tem o terminador: ".
+    + CategoryInfo          : ParserError: (:) [], P 
+   arentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEn 
+   dOfString
+[2026-10-30 16:09:41] Falha no pipeline (RuntimeError): A execução do PowerShell falhou.
+[2026-10-30 16:10:27] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:10:33] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:10:33] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:10:33] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:10:37] Processamento de dados concluído com sucesso.
+[2026-10-30 16:10:37] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 7
+[2026-10-30 16:10:37] -> Contas para auditoria manual (`para_verificar_manual.csv`): 45
+[2026-10-30 16:10:37] Iniciando a execução do script PowerShell de offboarding...
+[2026-10-30 16:10:38] Falha ao executar o PowerShell (código 1).
+[2026-10-30 16:10:38] Detalhes do erro PowerShell: No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI???? - Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:121 caractere:55
++ ... st "==========================================" -ForegroundColor Cyan
++                                                   ~~~~~~~~~~~~~~~~~~~~~~~
+A cadeia de caracteres nÆo tem o terminador: ".
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+[2026-10-30 16:10:38] Falha no pipeline (RuntimeError): A execução do PowerShell falhou.
+[2026-10-30 16:12:51] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:12:57] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:12:57] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:12:57] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:13:02] Processamento de dados concluído com sucesso.
+[2026-10-30 16:13:02] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 7
+[2026-10-30 16:13:02] -> Contas para auditoria manual (`para_verificar_manual.csv`): 45
+[2026-10-30 16:13:02] Iniciando a execução do script PowerShell de offboarding...
+[2026-10-30 16:13:02] Falha ao executar o PowerShell (código 1).
+[2026-10-30 16:13:02] Detalhes do erro PowerShell: No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI???? - Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:42 caractere:55
++ ... st "==========================================" -ForegroundColor Cyan
++                                                   ~~~~~~~~~~~~~~~~~~~~~~~
+A cadeia de caracteres nÆo tem o terminador: ".
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+[2026-10-30 16:13:02] Falha no pipeline (RuntimeError): A execução do PowerShell falhou.
+[2026-10-30 16:13:55] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:13:57] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:13:57] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:13:57] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:14:01] Processamento de dados concluído com sucesso.
+[2026-10-30 16:14:01] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 7
+[2026-10-30 16:14:01] -> Contas para auditoria manual (`para_verificar_manual.csv`): 45
+[2026-10-30 16:14:01] Iniciando a execução do script PowerShell de offboarding...
+[2026-10-30 16:14:12] Script PowerShell executado com sucesso.
+[2026-10-30 16:14:12] Saída do PowerShell:
+Procurando arquivo .env em: C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI???? - Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\..\..\.env
+Total de usuÇ­rios para processar no PowerShell: 7
+Autenticando no Microsoft Graph...
+Processando offboarding para: ALEXANDRE TAMIOZZO SAVIAN (UPN: alexandre.savian@jfi.com.br | Chapa: 410100300)
+
+  -> Acesso bloqueado com sucesso.
+
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio alexandre.savian@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: BRUNA ARGUEIRO PEREIRA (UPN: bruna.pereira@jfi.com.br | Chapa: 010323166)
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio bruna.pereira@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: GEAN PAULO FERNANDES PANIAGO (UPN: gean.paniago@jfi.com.br | Chapa: 210106345)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio gean.paniago@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: JOAO ARNALDO MENK GONCALVES DE CAMPOS (UPN: joao.campos@jfi.com.br | Chapa: 810100004)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio joao.campos@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: JULIANO PAIXAO DOS SANTOS (UPN: juliano.santos@jfi.com.br | Chapa: 010213486)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio juliano.santos@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: LEONARDO FERNANDES DE LIMA (UPN: leonardo.lima@jfi.com.br | Chapa: 701000648)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio leonardo.lima@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: OSMAIR DOMINGOS DA SILVA (UPN: osmair.silva@jfi.com.br | Chapa: 010319206)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio osmair.silva@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Pipeline PowerShell finalizada com sucesso!
+[2026-10-30 16:14:12] AUDITORIA: 7 conta(s) enviada(s) para processamento no PowerShell.
+[2026-10-30 16:18:38] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-10-30 16:18:42] Total de inativos encontrados no SIGO: 2193
+[2026-10-30 16:18:42] Registros restantes após ignorar exceções: 52
+[2026-10-30 16:18:42] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-10-30 16:18:46] Processamento de dados concluído com sucesso.
+[2026-10-30 16:18:46] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 0
+[2026-10-30 16:18:46] -> Contas para auditoria manual (`para_verificar_manual.csv`): 52
+[2026-10-30 16:18:46] Nenhuma conta nova para enviar ao PowerShell. Nenhuma licença processada neste ciclo.
