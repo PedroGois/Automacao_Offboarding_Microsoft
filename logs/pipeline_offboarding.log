@@ -637,3 +637,75 @@ Pipeline PowerShell finalizada com sucesso!
 [2026-10-30 16:18:46] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 0
 [2026-10-30 16:18:46] -> Contas para auditoria manual (`para_verificar_manual.csv`): 52
 [2026-10-30 16:18:46] Nenhuma conta nova para enviar ao PowerShell. Nenhuma licença processada neste ciclo.
+[2026-11-04 13:59:30] Iniciando pipeline unificado de auditoria e offboarding...
+[2026-11-04 13:59:34] Total de inativos encontrados no SIGO: 2193
+[2026-11-04 13:59:34] Registros restantes após ignorar exceções: 55
+[2026-11-04 13:59:34] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 13:59:39] Processamento de dados concluído com sucesso.
+[2026-11-04 13:59:39] -> Contas prontas para o PowerShell (`desligados_para_powershell.csv`): 3
+[2026-11-04 13:59:39] -> Contas para auditoria manual (`para_verificar_manual.csv`): 52
+[2026-11-04 13:59:39] Iniciando a execução do script PowerShell de offboarding...
+[2026-11-04 13:59:46] Script PowerShell executado com sucesso.
+[2026-11-04 13:59:46] Saída do PowerShell:
+Procurando arquivo .env em: C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI???? - Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\..\..\.env
+Total de usuÇ­rios para processar no PowerShell: 3
+Autenticando no Microsoft Graph...
+Processando offboarding para: ALEXANDRE TAMIOZZO SAVIAN (UPN: alexandre.savian@jfi.com.br | Chapa: 410100300)
+
+  -> Acesso bloqueado com sucesso.
+
+  -> SessÇæes ativas derrubadas.
+  -> Erro ao processar o usuÇ­rio alexandre.savian@jfi.com.br : O servidor remoto retornou um erro: (400) Solicita‡Æo Incorreta.
+Processando offboarding para: GABRIELA ARINOS BARBOSA (UPN: gabriela.barbosa@jfi.com.br | Chapa: 210106755)
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para gabriela.barbosa@jfi.com.br
+Processando offboarding para: RENATO TACEO PINHEIRO (UPN: renato.pinheiro@jfi.com.br | Chapa: 010323328)
+
+  -> Acesso bloqueado com sucesso.
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SessÇæes ativas derrubadas.
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> LicenÇõas removidas com sucesso: f245ecc8-75af-4f8e-b61f-27d8114de5f3, a403ebcc-fae0-4ca2-8c8c-7a907fd6c235
+  -> Offboarding concluÇðdo com sucesso para renato.pinheiro@jfi.com.br
+Pipeline PowerShell finalizada com sucesso!
+[2026-11-04 13:59:46] AUDITORIA: 3 conta(s) enviada(s) para processamento no PowerShell.
+[2026-11-04 16:13:47] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:14:54] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:15:11] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:10:37] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:13:13] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:20:32] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:23:28] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:34:20] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 16:36:24] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 17:04:50] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 17:10:10] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 17:10:33] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 17:10:49] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-04 17:10:51] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-04 17:10:51] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSǟO PARA CAIXA COMPARTILHADA ---
+[2026-11-04 17:11:17] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-04 17:11:20] [OFFBOARDING/REVOGAR] Falhou com código 1.
+[2026-11-04 17:15:15] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-04 17:15:23] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-04 17:15:24] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-04 17:15:24] [OFFBOARDING/CONVERTER] Saída:
+ERRO: ConversÃ£o nÃ£o iniciada. Configure no .env: EXCHANGE_ORGANIZATION, AZURE_CERTIFICATE_THUMBPRINT.
+[2026-11-04 17:15:28] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-04 17:15:30] [OFFBOARDING/REVOGAR] Falhou com código 1.
+[2026-11-04 17:15:30] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÃ‡ÃƒO DE LICENÃ‡AS ---
+Processando revogaÃ§Ã£o para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> ERRO na etapa 'remover licenÃ§as': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+RESUMO REVOGAÃ‡ÃƒO: 0 sucesso(s), 1 falha(s).

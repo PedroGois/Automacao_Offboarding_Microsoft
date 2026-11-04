@@ -1,56 +1,97 @@
-# M365 Offboarding 
+# M365 Offboarding
 
-> Automação de encerramento de ciclo de vida de identidades e otimização de licenças no Microsoft 365. 
-Integrando sistema de RH (SIGO) via Python e PowerShell com Graph API.
+Aplicação de apoio ao offboarding de colaboradores. Consulta o SIGO e o Microsoft Entra ID, cruza os registros e permite executar separadamente a conversão de caixas postais e as ações de bloqueio e remoção de licenças.
 
----
+> **Atenção:** as ações do Passo 3 alteram contas e caixas postais no tenant. Revise a lista de usuários antes de executá-las. Converta as caixas compartilhadas antes de remover as licenças.
 
-## 🚨 A Dor (Problema)
+## Requisitos
 
-- **Desperdício Financeiro:** Contas de colaboradores desligados permaneciam licenciadas por tempo indeterminado apenas para manter o recebimento de e-mails ou consulta de histórico, ou então mantidos até a necessidade de novas licenças, gerando custo desnecessário com aquisição de licenças do M365 acima do real.
-- **Risco de Segurança:** Processos manuais de desligamento abriam margem para demoras no bloqueio de credenciais e revogação de sessões ativas.
-- **Trabalho Manual Repetitivo:** A equipe de TI gastava tempo executando tarefas manuais e repetitivas de administração no portal do M365, tanto para manter o estoque de licenças quanto para conseguir novas licenças quando chegado ao limite.
+- Windows com PowerShell e Python instalados.
+- Acesso à API do SIGO.
+- Um aplicativo no Microsoft Entra ID configurado para autenticação de aplicativo.
+- ExchangeOnlineManagement disponível para o usuário que executa o painel (necessário para conversão das caixas).
+- Certificado instalado no Windows e cadastrado no mesmo aplicativo do Entra ID (necessário para conexão ao Exchange Online).
 
----
+## Configuração
 
-## 💡 A Solução
-Desenvolvimento de uma pipeline unificada de automação que une análise de dados e engenharia de infraestrutura:
+1. Instale as dependências Python:
 
-1. **Coleta e ETL (`collect_data.py`):** Conecta à API do sistema de RH (SIGO), valida as chapas ignoradas, cruza os dados com o Microsoft Entra ID via Microsoft Graph API e separa automaticamente quem precisa ter o acesso revogado de quem vai para auditoria manual.
+   ```powershell
+   python -m pip install -r requirements.txt
+   ```
 
-2. **Automação via PowerShell & Microsoft Graph API (`offboarding.ps1`):** Consome o `.csv` gerado e executa a política de desligamento automaticamente:
-   * Bloqueio imediato de login e derrubada de sessões ativas.
-   * Desvinculação das licenças pagas para reutilização e otimização financeira no tenant.
-   * Geração de logs de auditoria da execução.
+2. Crie o arquivo `.env` na raiz do projeto, usando `.env-example` como referência:
 
----
+   ```dotenv
+   SIGO_DOCUMENT=seu-documento
+   SIGO_PASSWORD=sua-senha
 
-## ⏱️ Agendamento e Execução Automatizada
-Toda a pipeline é iniciada executando o script principal (`collect_data.py`), que já engloba a extração, o cruzamento inteligente e aciona a limpeza no PowerShell. 
+   AZURE_TENANT_ID=id-do-tenant
+   AZURE_CLIENT_ID=id-do-aplicativo
+   AZURE_CLIENT_SECRET=segredo-do-aplicativo
 
-O processo pode ser facilmente **agendado** (via *Agendador de Tarefas do Windows* ou *Crontab* em ambientes Linux) para rodar automaticamente a cada 7 dias (ou na periodicidade desejada), garantindo conformidade contínua e economia de licenças sem intervenção manual.
+   EXCHANGE_ORGANIZATION=seu-tenant.onmicrosoft.com
+   AZURE_CERTIFICATE_THUMBPRINT=impressao-digital-do-certificado
+   ```
 
----
-## 🚨 Pendente :
-1.Criar a caixa compartilhada antes da remoção das licenças para manter o histórico de emails por 6 meses, preciso verificar se existe um contador de tempo de vida de uma caixa compartilhada para realizar a desativação automaticamente .
+   `SIGO_DOCUMENT`, `SIGO_PASSWORD` e as três variáveis `AZURE_*` são necessárias para buscar os dados e executar as ações do Graph. `EXCHANGE_ORGANIZATION` e `AZURE_CERTIFICATE_THUMBPRINT` são necessárias para converter caixas compartilhadas.
 
+   O certificado deve estar instalado no repositório de certificados do Windows acessível ao usuário que inicia o Streamlit, com chave privada disponível, e cadastrado no aplicativo do Entra ID. O aplicativo também precisa estar autorizado a conectar ao Exchange Online e ter as permissões administrativas necessárias. Não compartilhe nem versione o `.env`, o segredo ou a chave privada do certificado.
 
-## 🚨 Atualizações / Correções
-.
+3. Configure no aplicativo do Entra ID as permissões de aplicativo necessárias às operações usadas no Graph: leitura de usuários, atualização de usuários, revogação de sessões e atribuição de licenças. Conceda o consentimento administrativo e valide a configuração com o administrador do tenant.
 
-## 📂 Estrutura do Repositório
+## Executar o painel
+
+Na raiz do repositório:
+
+```powershell
+python -m streamlit run app.py
+```
+
+No painel:
+
+1. **Buscar dados:** autentica no SIGO, carrega os usuários do Entra ID e mostra o resultado de cada etapa.
+2. **Processar e cruzar:** apresenta as contas prontas para processamento e os casos que precisam de verificação manual.
+3. **Executar ações, nesta ordem:**
+   - **Converter em Caixa Compartilhada:** conecta ao Exchange Online e executa `Set-Mailbox -Type Shared`.
+   - **Revogar, Bloquear e Remover Licenças:** usa o Microsoft Graph para bloquear o login, revogar sessões e remover licenças.
+
+As ações são independentes: a segunda não é executada automaticamente após a primeira. Confirme que a conversão foi concluída antes de remover as licenças.
+
+## Resultados e logs
+
+- O painel exibe a saída do PowerShell para a ação executada e sinaliza falhas.
+- O script informa o resultado por usuário e um resumo de sucessos e falhas. Se houver falha em qualquer usuário, retorna código de saída diferente de zero; a saída completa fica disponível no painel.
+- A seção **Histórico de execução** mostra as últimas 200 linhas do log e permite baixar o arquivo completo.
+- O log do pipeline Python fica em `logs/pipeline_offboarding.log`.
+- As listas geradas ficam em `data/desligados_para_powershell.csv` e `data/para_verificar_manual.csv`.
+
+## Critérios de cruzamento
+
+São considerados para processamento os colaboradores inativos no SIGO que correspondem a uma conta no Entra ID. O cruzamento tenta usar matrícula, e-mail/UPN/aliases e nome normalizado único. Correspondências ambíguas ou sem conta correspondente vão para verificação manual.
+
+Uma conta encontrada é enviada para a lista de processamento quando tem licenças atribuídas **ou** está habilitada no Entra ID. Contas já bloqueadas e sem licenças não são incluídas na lista de ações.
+
+## Limitações e próximos passos
+
+- A conversão de caixa compartilhada requer Exchange Online PowerShell e certificado; o segredo do Graph não substitui essa autenticação.
+- A retenção e remoção automática de caixas compartilhadas após seis meses ainda não está implementada.
+
+## Estrutura do projeto
 
 ```text
-├── docs/
-│   └── POLITICA_OFFBOARDING.md      # Diretrizes e regras de negócio do processo
+├── app.py
 ├── scripts/
 │   ├── python/
-│   │   └── collect_data.py          # Script principal de ETL, cruzamento e início da pipeline
+│   │   └── collect_data.py
 │   └── powershell/
-│       └── offboarding.ps1          # Script de automação de bloqueio e remoção de licenças
+│       └── offboarding.ps1
 ├── data/
-│   ├── desligados_para_powershell.csv # CSV gerado automaticamente com contas para offboarding
-│   └── para_verificar_manual.csv    # CSV de auditoria para casos atípicos
+│   ├── desligados_para_powershell.csv
+│   └── para_verificar_manual.csv
 ├── logs/
-│   └── pipeline_offboarding.log     # Histórico de auditoria e execuções
-└── README.md                        # Documentação do projeto
+│   └── pipeline_offboarding.log
+├── .env-example
+├── requirements.txt
+└── README.MD
+```
