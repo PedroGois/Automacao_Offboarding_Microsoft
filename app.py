@@ -1,8 +1,12 @@
+import importlib
 import subprocess
 from time import perf_counter
 import streamlit as st
 
 from scripts.python import collect_data
+
+if not callable(getattr(collect_data, "adicionar_chapa_ignorada", None)):
+    collect_data = importlib.reload(collect_data)
 
 collect_data.carregar_configuracoes()
 
@@ -103,7 +107,48 @@ if st.session_state["df_desligados"] is not None:
     with tab1:
         st.dataframe(st.session_state["df_desligados"], use_container_width=True)
     with tab2:
-        st.dataframe(st.session_state["df_verificar"], use_container_width=True)
+        df_manual = st.session_state["df_verificar"]
+        if df_manual.empty:
+            st.info("Não há colaboradores para verificação manual.")
+        else:
+            for indice, (_, colaborador) in enumerate(df_manual.iterrows()):
+                chapa = str(colaborador.get("ChapaSIGO", "")).strip()
+                nome = str(colaborador.get("NomeSIGO", "")).strip()
+                email = str(colaborador.get("EmailSIGO", "")).strip()
+                motivo = str(colaborador.get("Motivo", "")).strip()
+                dados_colaborador, acao_colaborador = st.columns([5, 1])
+                with dados_colaborador:
+                    st.markdown(
+                        f"**{nome or 'Nome não informado'}**  \n"
+                        f"Chapa: {chapa or 'N/A'} | E-mail: {email or 'N/A'}  \n"
+                        f"Motivo: {motivo or 'Não informado'}"
+                    )
+                with acao_colaborador:
+                    if st.button(
+                        "➕ Ignorar nas próximas",
+                        key=f"ignorar_chapa_{indice}",
+                        disabled=not chapa or chapa.upper() == "N/A",
+                    ):
+                        try:
+                            collect_data.adicionar_chapa_ignorada(chapa)
+                            df_atualizado = st.session_state["df_verificar"]
+                            df_atualizado = df_atualizado[
+                                df_atualizado["ChapaSIGO"].astype(str).str.strip() != chapa
+                            ].reset_index(drop=True)
+                            df_atualizado.to_csv(
+                                collect_data.OUTPUT_VERIFICAR_CSV,
+                                index=False,
+                                sep=";",
+                            )
+                            st.session_state["df_verificar"] = df_atualizado
+                            st.success(
+                                f"A chapa {chapa} foi adicionada às exceções e removida "
+                                "da lista de verificação atual."
+                            )
+                            st.rerun()
+                        except Exception as error:
+                            st.error(f"Não foi possível ignorar a chapa {chapa}: {error}")
+                st.divider()
 
 # ==========================================
 # ETAPA 3: Ações de Offboarding Separadas

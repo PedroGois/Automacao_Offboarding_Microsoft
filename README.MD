@@ -1,26 +1,36 @@
 # M365 Offboarding
 
-Aplicação de apoio ao offboarding de colaboradores. Consulta o SIGO e o Microsoft Entra ID, cruza os registros e permite executar separadamente a conversão de caixas postais e as ações de bloqueio e remoção de licenças.
+Painel interno para apoiar o processo de desligamento de colaboradores. O sistema consulta o SIGO e o Microsoft Entra ID, cruza os registros e apresenta listas para revisão antes de executar ações separadas no Exchange Online e no Microsoft Graph.
 
-> **Atenção:** as ações do Passo 3 alteram contas e caixas postais no tenant. Revise a lista de usuários antes de executá-las. Converta as caixas compartilhadas antes de remover as licenças.
+> **Atenção:** as ações do painel alteram caixas postais e contas no tenant. Revise cuidadosamente a lista de processamento. Converta as caixas em compartilhadas e confirme o resultado antes de bloquear a conta e remover licenças.
+
+## Funcionalidades
+
+- Consulta de colaboradores e situação de atividade no SIGO.
+- Consulta paginada de usuários, licenças atribuídas e estado da conta no Microsoft Graph.
+- Cruzamento por matrícula, e-mail/UPN/aliases e, quando a correspondência é única, nome normalizado.
+- Geração de uma lista de processamento e outra de verificação manual.
+- Conversão de caixas postais em caixas compartilhadas por meio do Exchange Online PowerShell.
+- Bloqueio de login, revogação de sessões e remoção das licenças atribuídas pelo Microsoft Graph.
+- Registro de chapas ignoradas em JSON e histórico do pipeline.
 
 ## Requisitos
 
-- Windows com PowerShell e Python instalados.
-- Acesso à API do SIGO.
-- Um aplicativo no Microsoft Entra ID configurado para autenticação de aplicativo.
-- ExchangeOnlineManagement disponível para o usuário que executa o painel (necessário para conversão das caixas).
-- Certificado instalado no Windows e cadastrado no mesmo aplicativo do Entra ID (necessário para conexão ao Exchange Online).
+- Windows com Python e PowerShell disponíveis.
+- Acesso à API do SIGO e credenciais válidas.
+- Aplicativo do Microsoft Entra ID com autenticação de aplicativo, segredo válido e permissões administrativas para as operações realizadas pelo Graph.
+- Para conversão de caixas: módulo `ExchangeOnlineManagement`, certificado instalado com chave privada acessível ao usuário do painel e associado ao aplicativo do Entra ID.
+- Acesso ao Exchange Online com autorização para conexão app-only e gerenciamento das caixas postais.
 
-## Configuração
+## Instalação e configuração
 
-1. Instale as dependências Python:
+1. Abra um terminal na pasta raiz do projeto e instale as dependências:
 
    ```powershell
    python -m pip install -r requirements.txt
    ```
 
-2. Crie o arquivo `.env` na raiz do projeto, usando `.env-example` como referência:
+2. Crie `.env` na raiz do projeto, usando `.env-example` como referência:
 
    ```dotenv
    SIGO_DOCUMENT=seu-documento
@@ -34,52 +44,66 @@ Aplicação de apoio ao offboarding de colaboradores. Consulta o SIGO e o Micros
    AZURE_CERTIFICATE_THUMBPRINT=impressao-digital-do-certificado
    ```
 
-   `SIGO_DOCUMENT`, `SIGO_PASSWORD` e as três variáveis `AZURE_*` são necessárias para buscar os dados e executar as ações do Graph. `EXCHANGE_ORGANIZATION` e `AZURE_CERTIFICATE_THUMBPRINT` são necessárias para converter caixas compartilhadas.
+   **Variáveis necessárias por operação:**
 
-   O certificado deve estar instalado no repositório de certificados do Windows acessível ao usuário que inicia o Streamlit, com chave privada disponível, e cadastrado no aplicativo do Entra ID. O aplicativo também precisa estar autorizado a conectar ao Exchange Online e ter as permissões administrativas necessárias. Não compartilhe nem versione o `.env`, o segredo ou a chave privada do certificado.
+   | Variáveis | Uso |
+   |---|---|
+   | `SIGO_DOCUMENT`, `SIGO_PASSWORD` | Autenticação e consulta ao SIGO |
+   | `AZURE_TENANT_ID`, `AZURE_CLIENT_ID`, `AZURE_CLIENT_SECRET` | Consulta e ações no Microsoft Graph |
+   | `AZURE_CLIENT_ID`, `EXCHANGE_ORGANIZATION`, `AZURE_CERTIFICATE_THUMBPRINT` | Conexão app-only ao Exchange Online para conversão |
 
-3. Configure no aplicativo do Entra ID as permissões de aplicativo necessárias às operações usadas no Graph: leitura de usuários, atualização de usuários, revogação de sessões e atribuição de licenças. Conceda o consentimento administrativo e valide a configuração com o administrador do tenant.
+3. Configure o aplicativo no Entra ID com as permissões de aplicativo exigidas pelas operações de leitura de usuários/licenças, atualização de contas, revogação de sessões e atribuição de licenças. Conceda consentimento administrativo conforme as políticas da organização.
 
-## Executar o painel
+4. Para a conversão de caixas, instale o certificado no repositório do Windows acessível à identidade que executa o Streamlit, confirme que a chave privada está disponível e autorize o aplicativo no Exchange Online. O segredo do Graph não substitui o certificado do Exchange.
 
-Na raiz do repositório:
+Não compartilhe nem versione `.env`, segredos ou chaves privadas. Valide as permissões e credenciais com o administrador responsável pelo tenant.
+
+## Execução
+
+Na raiz do repositório, inicie o painel:
 
 ```powershell
-streamlit run app.py
+python -m streamlit run app.py
 ```
 
-No painel:
+O endereço local do painel será exibido no terminal.
 
-1. **Buscar e Cruzar Dados:** consulta SIGO e Entra ID, cruza os usuários e gera as listas para processamento e auditoria.
-2. **Inspecionar visualmente:** revise a tabela de usuários prontos para offboarding e a tabela de casos para verificação manual.
-3. **Executar ações separadamente, nesta ordem:**
-   - **Converter para Caixa Compartilhada:** conecta ao Exchange Online e executa `Set-Mailbox -Type Shared`, preservando a caixa e seu histórico.
-   - **Revogar, Bloquear e Remover Licenças:** usa o Microsoft Graph para bloquear o login, revogar sessões e remover as licenças atribuídas.
+## Fluxo operacional
 
-As ações são independentes: a segunda não é executada automaticamente após a primeira. Confirme que a conversão foi concluída antes de remover as licenças.
+1. **Buscar e Cruzar Dados** — consulta o SIGO e o Entra ID, faz o cruzamento e grava os CSVs de resultado.
+2. **Inspecionar os resultados** — revise a lista de usuários prontos para offboarding e os casos que exigem verificação manual.
+3. **Converter para Caixa Compartilhada** — executa `Set-Mailbox -Type Shared` nas contas da lista de processamento. A conversão altera o tipo da caixa; não é uma ação de exclusão de e-mails.
+4. **Revogar, Bloquear e Remover Licenças** — bloqueia o login, revoga sessões e remove as licenças atribuídas retornadas pelo Graph.
 
-O painel aciona as funções `ConvertTo-SharedMailbox` e `Revoke-AndBlockUser` de `scripts/powershell/offboarding.ps1` pelas ações `converter` e `revogar`, respectivamente.
+As duas ações do Passo 3 são independentes e não são encadeadas automaticamente. Execute a conversão primeiro e confirme seu resultado antes de iniciar a revogação. A lista enviada às ações vem de `data/desligados_para_powershell.csv`.
 
-O módulo `scripts/python/collect_data.py` pode ser importado pelo painel. Ele disponibiliza `carregar_configuracoes()`, `obter_dados_sigo()`, `obter_usuarios_microsoft()` e `cruzar_dados(df_sigo, df_ms)`. A última função retorna os dois DataFrames do cruzamento e grava os CSVs de processamento e auditoria manual.
+Na tabela **Para Verificação Manual**, **Ignorar nas próximas** grava a chapa em `data/chapas_ignoradas.json` e a remove da tabela e do CSV de verificação da sessão atual. Nas próximas buscas e cruzamentos, essa chapa será excluída dos resultados.
 
-## Resultados e logs
+## Regras do cruzamento
 
-- O painel exibe a saída do PowerShell para a ação executada e sinaliza falhas.
-- O script informa o resultado por usuário e um resumo de sucessos e falhas. Se houver falha em qualquer usuário, retorna código de saída diferente de zero; a saída completa fica disponível no painel.
-- A seção **Histórico de execução** mostra as últimas 200 linhas do log e permite baixar o arquivo completo.
-- O log do pipeline Python fica em `logs/pipeline_offboarding.log`.
-- As listas geradas ficam em `data/desligados_para_powershell.csv` e `data/para_verificar_manual.csv`.
+- Somente registros inativos no SIGO são avaliados.
+- A correspondência tenta matrícula (`employeeId`), e-mail/UPN/aliases e nome normalizado. Correspondências ambíguas ou sem conta correspondente vão para verificação manual.
+- Uma conta correspondente entra na lista de processamento se estiver habilitada **ou** tiver uma ou mais licenças atribuídas; contas bloqueadas sem licenças não entram nas listas.
+- Registros sem uma conta identificável ou sem UPN/e-mail utilizável para a ação são encaminhados para verificação manual.
+- Chapas no JSON de exceções e os nomes/e-mails configurados como exceções no código são omitidos dos resultados.
 
-## Critérios de cruzamento
+## Arquivos gerados e logs
 
-São considerados para processamento os colaboradores inativos no SIGO que correspondem a uma conta no Entra ID. O cruzamento tenta usar matrícula, e-mail/UPN/aliases e nome normalizado único. Correspondências ambíguas ou sem conta correspondente vão para verificação manual.
+| Caminho | Conteúdo |
+|---|---|
+| `data/desligados_para_powershell.csv` | Contas aprovadas pelo cruzamento para as ações do PowerShell |
+| `data/para_verificar_manual.csv` | Registros que precisam de revisão |
+| `data/chapas_ignoradas.json` | Chapas ignoradas nas próximas buscas |
+| `logs/pipeline_offboarding.log` | Eventos e resultados do pipeline Python |
 
-Uma conta encontrada é enviada para a lista de processamento quando tem licenças atribuídas **ou** está habilitada no Entra ID. Contas já bloqueadas e sem licenças não são incluídas na lista de ações.
+Os CSVs são separados por ponto e vírgula e consumidos pelo script PowerShell. A seção **Histórico de execução** do painel mostra as últimas 200 linhas do log Python e oferece o download do arquivo completo. A saída das ações PowerShell e os resultados por usuário são apresentados no painel.
 
-## Limitações e próximos passos
+## Segurança e limitações operacionais
 
-- A conversão de caixa compartilhada requer Exchange Online PowerShell e certificado; o segredo do Graph não substitui essa autenticação.
-- A retenção e remoção automática de caixas compartilhadas após seis meses ainda não está implementada.
+- As ações de bloqueio e licença são administrativas e podem afetar o acesso do colaborador. Confira os registros antes de executá-las.
+- A aplicação não converte automaticamente a caixa depois da busca nem remove licenças depois da conversão; cada ação requer um clique separado.
+- A remoção de licenças atua sobre as licenças atribuídas retornadas pelo Graph; não há distinção configurada entre planos pagos e não pagos.
+- A retenção e a remoção automática de caixas compartilhadas após seis meses não estão implementadas.
 
 ## Estrutura do projeto
 
@@ -91,9 +115,13 @@ Uma conta encontrada é enviada para a lista de processamento quando tem licenç
 │   └── powershell/
 │       └── offboarding.ps1
 ├── data/
+│   ├── chapas_ignoradas.json
 │   ├── desligados_para_powershell.csv
+│   ├── fluxo.drawio
 │   └── para_verificar_manual.csv
+├── docs/
 ├── logs/
+│   ├── data_sigo.log
 │   └── pipeline_offboarding.log
 ├── .env-example
 ├── requirements.txt
