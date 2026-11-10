@@ -123,10 +123,11 @@ Estas melhorias ainda não fazem parte da automação atual:
 - [ ] Criar agendamento semanal para reduzir a dependência da execução manual.
 - [ ] Criar uma interface para consultar e remover exceções registradas em `data/chapas_ignoradas.json`.
 - [ ] Produzir um histórico de auditoria por colaborador, com data, responsável, ações executadas e resultado.
+- [ ] Remover via gitignore os logs de produção.
 
 ## Publicação no GitHub
 
-Antes de publicar, confirme que o repositório não contém dados pessoais ou informações sensíveis. Não envie `.env`, segredos, certificados, tokens, planilhas de colaboradores nem logs de produção. Os arquivos em `data/` e `logs/` podem conter informações pessoais e devem ser revisados, removidos ou substituídos por exemplos anônimos antes de publicar um repositório público.
+Antes de publicar, confirme que o repositório não contém dados pessoais ou informações sensíveis. Não envie `.env`, segredos, certificados, tokens, planilhas de colaboradores nem logs de produção. 
 
 ## Estrutura do projeto
 
