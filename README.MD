@@ -1,8 +1,16 @@
 # M365 Offboarding
 
-Painel interno para apoiar o processo de desligamento de colaboradores. O sistema consulta o SIGO e o Microsoft Entra ID, cruza os registros e apresenta listas para revisão antes de executar ações separadas no Exchange Online e no Microsoft Graph.
+Painel interno para apoiar o desligamento de colaboradores no Microsoft 365. O sistema consulta o SIGO e o Microsoft Entra ID, cruza os registros e apresenta listas para revisão antes de executar ações no Exchange Online e no Microsoft Graph.
 
-> **Atenção:** as ações do painel alteram caixas postais e contas no tenant. Revise cuidadosamente a lista de processamento. Converta as caixas em compartilhadas e confirme o resultado antes de bloquear a conta e remover licenças.
+> **Uso interno e administrativo:** este projeto altera contas, sessões, licenças e caixas de correio no tenant. Toda execução deve ser revisada e autorizada pela equipe responsável.
+
+## Documentação
+
+| Documento | Finalidade | Caminho |
+|---|---|---|
+| Guia operacional | Passo a passo de execução, revisão e tratamento de falhas. | [docs/GUIA_OPERACIONAL.md](docs/GUIA_OPERACIONAL.md) |
+| Arquitetura e limitações | Componentes, integrações e limites atuais da solução. | [docs/ARQUITETURA_E_LIMITACOES.md](docs/ARQUITETURA_E_LIMITACOES.md) |
+| Política de desligamento | Diretrizes organizacionais para o ciclo de offboarding. | [docs/POLITICA_OFFBOARDING.MD](docs/POLITICA_OFFBOARDING.MD) |
 
 ## Funcionalidades
 
@@ -103,7 +111,22 @@ Os CSVs são separados por ponto e vírgula e consumidos pelo script PowerShell.
 - As ações de bloqueio e licença são administrativas e podem afetar o acesso do colaborador. Confira os registros antes de executá-las.
 - A aplicação não converte automaticamente a caixa depois da busca nem remove licenças depois da conversão; cada ação requer um clique separado.
 - A remoção de licenças atua sobre as licenças atribuídas retornadas pelo Graph; não há distinção configurada entre planos pagos e não pagos.
-- A retenção e a remoção automática de caixas compartilhadas após seis meses não estão implementadas.
+- A retenção de caixas compartilhadas por 90 dias e a respectiva etapa de arquivamento ou exclusão ao fim desse prazo ainda serão implementadas. Até lá, esse acompanhamento é manual.
+
+## Melhorias planejadas
+
+Estas melhorias ainda não fazem parte da automação atual:
+
+- [ ] Implementar o controle de retenção de 90 dias para caixas compartilhadas, incluindo a decisão aprovada de arquivamento, backup ou exclusão ao fim do prazo.
+- [ ] Alinhar a ordem do processo entre a política e o sistema: atualmente o painel orienta converter a caixa antes de bloquear a conta; a política descreve o bloqueio como primeira etapa.
+- [ ] Remover grupos de segurança, listas de distribuição e associações ao Teams, caso essa regra seja mantida pela organização.
+- [ ] Criar agendamento semanal para reduzir a dependência da execução manual.
+- [ ] Criar uma interface para consultar e remover exceções registradas em `data/chapas_ignoradas.json`.
+- [ ] Produzir um histórico de auditoria por colaborador, com data, responsável, ações executadas e resultado.
+
+## Publicação no GitHub
+
+Antes de publicar, confirme que o repositório não contém dados pessoais ou informações sensíveis. Não envie `.env`, segredos, certificados, tokens, planilhas de colaboradores nem logs de produção. Os arquivos em `data/` e `logs/` podem conter informações pessoais e devem ser revisados, removidos ou substituídos por exemplos anônimos antes de publicar um repositório público.
 
 ## Estrutura do projeto
 

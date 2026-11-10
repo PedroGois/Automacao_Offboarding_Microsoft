@@ -1308,3 +1308,38 @@ RESUMO REVOGAÇÃO: 2 sucesso(s), 0 falha(s).
 [2026-11-10 11:29:39] Dados do SIGO carregados: 4959 registros.
 [2026-11-10 11:29:39] Autenticando no Microsoft Entra ID (Graph API)...
 [2026-11-10 11:29:44] Cruzamento concluído: 0 conta(s) para processamento e 30 para verificação manual.
+[2026-11-10 12:52:33] Dados do SIGO carregados: 4960 registros.
+[2026-11-10 12:52:33] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 12:52:37] Cruzamento concluído: 2 conta(s) para processamento e 27 para verificação manual.
+[2026-11-10 12:52:55] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 12:53:05] [OFFBOARDING/CONVERTER] Concluída com código 0.
+[2026-11-10 12:53:05] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Convertendo para Shared Box: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "aline.ferreira@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "sudario.junior@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+RESUMO CONVERSÃO: 2 sucesso(s), 0 falha(s).
+[2026-11-10 12:53:10] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 12:53:14] [OFFBOARDING/REVOGAR] Concluída com código 0.
+[2026-11-10 12:53:15] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---
+Processando revogação para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 1.
+Processando revogação para: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 1.
+RESUMO REVOGAÇÃO: 2 sucesso(s), 0 falha(s).
+[2026-11-10 12:54:33] Dados do SIGO carregados: 4960 registros.
+[2026-11-10 12:54:33] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 12:54:38] Cruzamento concluído: 0 conta(s) para processamento e 26 para verificação manual.
