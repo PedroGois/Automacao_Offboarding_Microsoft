@@ -709,3 +709,593 @@ Processando revogaÃ§Ã£o para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferre
 
   -> ERRO na etapa 'remover licenÃ§as': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
 RESUMO REVOGAÃ‡ÃƒO: 0 sucesso(s), 1 falha(s).
+[2026-11-10 08:53:36] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 09:03:17] Dados do SIGO carregados: 1 registros.
+[2026-11-10 09:10:38] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 09:10:38] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 09:10:43] Cruzamento concluído: 6 conta(s) para processamento e 81 para verificação manual.
+[2026-11-10 09:11:03] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 09:11:03] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 09:11:03] [OFFBOARDING/CONVERTER] Saída:
+ERRO: Conversão não iniciada. Configure no .env: EXCHANGE_ORGANIZATION, AZURE_CERTIFICATE_THUMBPRINT.
+[2026-11-10 09:38:20] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 09:38:20] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 09:38:25] Cruzamento concluído: 7 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 09:38:38] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 09:38:40] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 09:38:40] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+[2026-11-10 09:38:40] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com segredo. Verifique permissões Exchange.ManageAsApp e a organização. Detalhe: 
+Não é possível localizar um parâmetro que coincida com o nome de parâmetro 'AppSecret'.
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:105 caractere:9
++         throw "Falha ao conectar no Exchange Online com segredo. Veri ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...ro 'AppSecret'.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com segredo. Verifique permissões Exchange.ManageAs 
+   App e a organização. Detalhe: Não é possível localizar um parâmetro que coincida com o nome de parâmetro 'AppSecre  
+  t'.
+[2026-11-10 09:40:58] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 09:40:58] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 09:41:03] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 09:41:18] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 09:41:24] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 09:41:24] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+WAM Error  
+ Error Code: 3399811229 
+ Error Message: ApiContractViolation 
+ WAM Error Message: User name is malformed. 
+ Internal Error Code: 557973642 
+ Possible causes: 
+- Invalid redirect uri - ensure you have configured the following url in the application registration in Azure Portal: ms-appx-web://microsoft.aad.brokerplugin/07efb811-232e-4d48-a340-a39bb6ebc4db
+[2026-11-10 09:41:24] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com segredo. Verifique permissões Exchange.ManageAsApp e a organização. Detalhe: 
+WAM Error  
+ Error Code: 3399811229 
+ Error Message: ApiContractViolation 
+ WAM Error Message: User name is malformed. 
+ Internal Error Code: 557973642 
+ Possible causes: 
+- Invalid redirect uri - ensure you have configured the following url in the application registration in Azure Portal: 
+ms-appx-web://microsoft.aad.brokerplugin/07efb811-232e-4d48-a340-a39bb6ebc4db 
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:106 caractere:9
++         throw "Falha ao conectar no Exchange Online com segredo. Veri ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...-a39bb6ebc4db 
+:String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com segredo. Verifique permissões Exchange.ManageAs 
+   App e a organização. Detalhe: WAM Error  
+ Error Code: 3399811229 
+ Error Message: ApiContractViolation 
+ WAM Error Message: User name is malformed. 
+ Internal Error Code: 557973642 
+ Possible causes: 
+    - Invalid redirect uri - ensure you have configured the following url in the application registration in Azure Por 
+   tal: ms-appx-web://microsoft.aad.brokerplugin/07efb811-232e-4d48-a340-a39bb6ebc4db
+[2026-11-10 09:42:59] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 09:42:59] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 09:43:03] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 09:44:16] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 09:44:18] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 09:44:18] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+WAM Error  
+ Error Code: 3399811229 
+ Error Message: ApiContractViolation 
+ WAM Error Message: User name is malformed. 
+ Internal Error Code: 557973642 
+ Possible causes: 
+- Invalid redirect uri - ensure you have configured the following url in the application registration in Azure Portal: ms-appx-web://microsoft.aad.brokerplugin/07efb811-232e-4d48-a340-a39bb6ebc4db
+[2026-11-10 09:44:18] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com segredo. Verifique permissões Exchange.ManageAsApp e a organização. Detalhe: 
+WAM Error  
+ Error Code: 3399811229 
+ Error Message: ApiContractViolation 
+ WAM Error Message: User name is malformed. 
+ Internal Error Code: 557973642 
+ Possible causes: 
+- Invalid redirect uri - ensure you have configured the following url in the application registration in Azure Portal: 
+ms-appx-web://microsoft.aad.brokerplugin/07efb811-232e-4d48-a340-a39bb6ebc4db 
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:106 caractere:9
++         throw "Falha ao conectar no Exchange Online com segredo. Veri ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...-a39bb6ebc4db 
+:String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com segredo. Verifique permissões Exchange.ManageAs 
+   App e a organização. Detalhe: WAM Error  
+ Error Code: 3399811229 
+ Error Message: ApiContractViolation 
+ WAM Error Message: User name is malformed. 
+ Internal Error Code: 557973642 
+ Possible causes: 
+    - Invalid redirect uri - ensure you have configured the following url in the application registration in Azure Por 
+   tal: ms-appx-web://microsoft.aad.brokerplugin/07efb811-232e-4d48-a340-a39bb6ebc4db
+[2026-11-10 09:51:51] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 09:51:51] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 09:51:56] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 09:57:23] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 09:57:23] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 09:57:28] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 09:57:31] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 09:57:42] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 09:57:42] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+User canceled authentication.
+[2026-11-10 09:57:42] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: User canceled authentication. 
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:101 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...uthentication. :String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: User canceled authentication.
+[2026-11-10 09:57:43] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 09:57:57] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 09:57:57] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+User canceled authentication.
+[2026-11-10 09:57:57] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: User canceled authentication. 
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:101 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...uthentication. :String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: User canceled authentication.
+[2026-11-10 10:03:02] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:03:03] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:03:07] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 10:03:10] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:03:20] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 10:03:20] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+User canceled authentication.
+[2026-11-10 10:03:20] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: User canceled authentication. 
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:101 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...uthentication. :String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: User canceled authentication.
+[2026-11-10 10:06:12] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:06:12] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:06:16] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 10:06:18] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:06:32] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 10:06:32] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+User canceled authentication.
+[2026-11-10 10:06:32] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: User canceled authentication. 
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:101 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...uthentication. :String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: User canceled authentication.
+[2026-11-10 10:06:52] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:07:13] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 10:07:13] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+User canceled authentication.
+[2026-11-10 10:07:13] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: User canceled authentication. 
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:101 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...uthentication. :String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: User canceled authentication.
+[2026-11-10 10:19:09] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:19:09] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:19:14] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 10:19:18] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:19:20] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 10:19:20] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+System.Security.Cryptography.CryptographicException: O conjunto de chaves não existe
+
+   em System.Security.Cryptography.Utils.CreateProvHandle(CspParameters parameters, Boolean randomKeyContainer)
+   em System.Security.Cryptography.Utils.GetKeyPairHelper(CspAlgorithmType keyType, CspParameters parameters, Boolean randomKeyContainer, Int32 dwKeySize, SafeProvHandle& safeProvHandle, SafeKeyHandle& safeKeyHandle)
+   em System.Security.Cryptography.RSACryptoServiceProvider.GetKeyPair()
+   em System.Security.Cryptography.RSACryptoServiceProvider..ctor(Int32 dwKeySize, CspParameters parameters, Boolean useDefaultKeySize)
+   em System.Security.Cryptography.X509Certificates.X509Certificate2.get_PrivateKey()
+   em System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey(X509Certificate2 certificate)
+   em Microsoft.Identity.Client.PlatformsCommon.Shared.CommonCryptographyManager.SignWithCertificate(String message, X509Certificate2 certificate, RSASignaturePadding signaturePadding)
+   em Microsoft.Identity.Client.Internal.JsonWebToken.Sign(X509Certificate2 certificate, Boolean sendX5C, Boolean useSha2AndPss)
+   em Microsoft.Identity.Client.Internal.ClientCredential.CertificateAndClaimsClientCredential.AddConfidentialClientParametersAsync(OAuth2Client oAuth2Client, AuthenticationRequestParameters requestParameters, ICryptographyManager cryptographyManager, String tokenEndpoint, CancellationToken cancellationToken)
+   em Microsoft.Identity.Client.OAuth2.TokenClient.<AddBodyParamsAndHeadersAsync>d__6.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.OAuth2.TokenClient.<SendTokenRequestAsync>d__4.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.RequestBase.<SendTokenRequestAsync>d__25.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.ClientCredentialRequest.<GetAccessTokenAsync>d__5.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.ClientCredentialRequest.<ExecuteAsync>d__4.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.RequestBase.<>c__DisplayClass11_1.<<RunAsync>b__1>d.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Utils.StopwatchService.<MeasureCodeBlockAsync>d__4.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.RequestBase.<RunAsync>d__11.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.ApiConfig.Executors.ConfidentialClientExecutor.<ExecuteAsync>d__3.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Exchange.Management.AdminApiProvider.Authentication.MSALTokenProvider.<GetAccessTokenAsync>d__41.MoveNext()
+[2026-11-10 10:19:20] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: O conjunto de chaves não existe
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:108 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...es não existe
+:String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: O conjunto de chaves não existe
+[2026-11-10 10:21:43] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:21:43] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:21:48] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 10:21:53] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:21:56] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 10:21:56] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Error Acquiring Token:
+System.Exception: Case when Message contains:AADSTS70011 Invalid scope. The scope has to be of the form "https://resourceUrl/.default"Mitigation: change the scope to be as expectedA configuration issue is preventing authentication - check the error message from the server for details. You can modify the configuration in the application registration portal. See https://aka.ms/msal-net-invalid-client for details.  Original exception: AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on application. [Reason - The key was not found., Please visit the Azure Portal, Graph Explorer or directly use MS Graph to see configured keys for app Id '07efb811-232e-4d48-a340-a39bb6ebc4db'. Review the documentation at https://docs.microsoft.com/en-us/graph/deployments to determine the corresponding service endpoint and https://docs.microsoft.com/en-us/graph/api/application-get?view=graph-rest-1.0&tabs=http to build a query request URL, such as 'https://graph.microsoft.com/beta/applications/07efb811-232e-4d48-a340-a39bb6ebc4db']. Trace ID: 05731bdb-fa75-4fd2-a316-ec0e67f61a00 Correlation ID: d2a3dce3-e7d3-4e6b-8ee2-6a2571b5a3b1 Timestamp: 2026-11-10 13:21:57Z ---> Microsoft.Identity.Client.MsalServiceException: A configuration issue is preventing authentication - check the error message from the server for details. You can modify the configuration in the application registration portal. See https://aka.ms/msal-net-invalid-client for details.  Original exception: AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on application. [Reason - The key was not found., Please visit the Azure Portal, Graph Explorer or directly use MS Graph to see configured keys for app Id '07efb811-232e-4d48-a340-a39bb6ebc4db'. Review the documentation at https://docs.microsoft.com/en-us/graph/deployments to determine the corresponding service endpoint and https://docs.microsoft.com/en-us/graph/api/application-get?view=graph-rest-1.0&tabs=http to build a query request URL, such as 'https://graph.microsoft.com/beta/applications/07efb811-232e-4d48-a340-a39bb6ebc4db']. Trace ID: 05731bdb-fa75-4fd2-a316-ec0e67f61a00 Correlation ID: d2a3dce3-e7d3-4e6b-8ee2-6a2571b5a3b1 Timestamp: 2026-11-10 13:21:57Z
+   em Microsoft.Identity.Client.OAuth2.OAuth2Client.ThrowServerException(HttpResponse response, RequestContext requestContext)
+   em Microsoft.Identity.Client.OAuth2.OAuth2Client.CreateResponse[T](HttpResponse response, RequestContext requestContext)
+   em Microsoft.Identity.Client.OAuth2.OAuth2Client.<ExecuteRequestAsync>d__13`1.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.OAuth2.TokenClient.<SendHttpAndClearTelemetryAsync>d__10.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em Microsoft.Identity.Client.OAuth2.TokenClient.<SendHttpAndClearTelemetryAsync>d__10.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.OAuth2.TokenClient.<SendTokenRequestAsync>d__4.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.RequestBase.<SendTokenRequestAsync>d__25.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.ClientCredentialRequest.<GetAccessTokenAsync>d__5.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.ClientCredentialRequest.<ExecuteAsync>d__4.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.RequestBase.<>c__DisplayClass11_1.<<RunAsync>b__1>d.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Utils.StopwatchService.<MeasureCodeBlockAsync>d__4.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.Internal.Requests.RequestBase.<RunAsync>d__11.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Identity.Client.ApiConfig.Executors.ConfidentialClientExecutor.<ExecuteAsync>d__3.MoveNext()
+--- Fim do rastreamento de pilha do local anterior onde a exceção foi gerada ---
+   em System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   em System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   em Microsoft.Exchange.Management.AdminApiProvider.Authentication.MSALTokenProvider.<GetAccessTokenAsync>d__41.MoveNext()
+   --- Fim do rastreamento de pilha de exceções internas ---
+   em Microsoft.Exchange.Management.AdminApiProvider.Authentication.MSALTokenProvider.<GetAccessTokenAsync>d__41.MoveNext()
+[2026-11-10 10:21:56] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: Case when Message contains:AADSTS70011 Invalid scope. The scope has to be of the form 
+"https://resourceUrl/.default"Mitigation: change the scope to be as expectedA configuration issue is preventing 
+authentication - check the error message from the server for details. You can modify the configuration in the 
+application registration portal. See https://aka.ms/msal-net-invalid-client for details.  Original exception: 
+AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on application. 
+[Reason - The key was not found., Please visit the Azure Portal, Graph Explorer or directly use MS Graph to see 
+configured keys for app Id '07efb811-232e-4d48-a340-a39bb6ebc4db'. Review the documentation at 
+https://docs.microsoft.com/en-us/graph/deployments to determine the corresponding service endpoint and 
+https://docs.microsoft.com/en-us/graph/api/application-get?view=graph-rest-1.0&tabs=http to build a query request URL, 
+such as 'https://graph.microsoft.com/beta/applications/07efb811-232e-4d48-a340-a39bb6ebc4db']. Trace ID: 
+05731bdb-fa75-4fd2-a316-ec0e67f61a00 Correlation ID: d2a3dce3-e7d3-4e6b-8ee2-6a2571b5a3b1 Timestamp: 2026-11-10 
+13:21:57Z
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:108 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...11-10 13:21:57Z:String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: Case when Message contains:AADSTS70011 Invalid scope. The scope has   
+  to be of the form "https://resourceUrl/.default"Mitigation: change the scope to be as expectedA configuration issu   
+ e is preventing authentication - check the error message from the server for details. You can modify the configura    
+tion in the application registration portal. See https://aka.ms/msal-net-invalid-client for details.  Original exc    
+eption: AADSTS700027: The certificate with identifier used to sign the client assertion is not registered on appli    
+cation. [Reason - The key was not found., Please visit the Azure Portal, Graph Explorer or directly use MS Graph t    
+o see configured keys for app Id '07efb811-232e-4d48-a340-a39bb6ebc4db'. Review the documentation at https://docs.    
+microsoft.com/en-us/graph/deployments to determine the corresponding service endpoint and https://docs.microsoft.c    
+om/en-us/graph/api/application-get?view=graph-rest-1.0&tabs=http to build a query request URL, such as 'https://gr    
+aph.microsoft.com/beta/applications/07efb811-232e-4d48-a340-a39bb6ebc4db']. Trace ID: 05731bdb-fa75-4fd2-a316-ec0e    
+67f61a00 Correlation ID: d2a3dce3-e7d3-4e6b-8ee2-6a2571b5a3b1 Timestamp: 2026-11-10 13:21:57Z
+[2026-11-10 10:30:08] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:30:08] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:30:12] Cruzamento concluído: 6 conta(s) para processamento e 80 para verificação manual.
+[2026-11-10 10:30:22] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:30:29] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 10:30:29] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+[2026-11-10 10:30:29] [OFFBOARDING/CONVERTER] Erros:
+Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a 
+organização. Detalhe: The role assigned to application 07efb811-232e-4d48-a340-a39bb6ebc4db isn't supported in this 
+scenario. Please check online documentation for assigning correct Directory Roles to Azure AD Application for EXO 
+App-Only Authentication.
+No C:\Users\pedro.gois\JFI Silvicultura Ltda\Koalipto - Suporte de TI🌲💻 - 
+Ti\Pedro\PROJETOS\OFFBOARDING_MS\scripts\powershell\offboarding.ps1:108 caractere:9
++         throw "Falha ao conectar no Exchange Online com certificado.  ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Falha ao conect...Authentication.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.Mana 
+   geAsApp, Thumbprint e a organização. Detalhe: The role assigned to application 07efb811-232e-4d48-a340-a39bb6ebc4d  
+  b isn't supported in this scenario. Please check online documentation for assigning correct Directory Roles to Azu   
+ re AD Application for EXO App-Only Authentication.
+[2026-11-10 10:37:37] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:38:21] [OFFBOARDING/CONVERTER] Falhou com código 1.
+[2026-11-10 10:38:21] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Convertendo para Shared Box: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+  -> ERRO ao converter/verificar caixa: O Exchange não confirmou RecipientTypeDetails=SharedMailbox (retornado: UserMailbox).
+Convertendo para Shared Box: ANNA CAROLINE TORRES GAGO (anna.gago@jfi.com.br)...
+  -> ERRO ao converter/verificar caixa: O Exchange não confirmou RecipientTypeDetails=SharedMailbox (retornado: UserMailbox).
+Convertendo para Shared Box: CAROLINE DE OLIVEIRA LOBO (caroline.lobo@jfi.com.br)...
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: LORRANA CECILIA VITORIANO DE CAMARGO (lorrana.camargo@jfi.com.br)...
+  -> ERRO ao converter/verificar caixa: O Exchange não confirmou RecipientTypeDetails=SharedMailbox (retornado: UserMailbox).
+Convertendo para Shared Box: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+  -> ERRO ao converter/verificar caixa: O Exchange não confirmou RecipientTypeDetails=SharedMailbox (retornado: UserMailbox).
+Convertendo para Shared Box: VINICIUS PLIXO CORREA (vinicius.correa@jfi.com.br)...
+  -> SUCESSO: caixa confirmada como compartilhada.
+RESUMO CONVERSÃO: 2 sucesso(s), 4 falha(s).
+[2026-11-10 10:43:37] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:43:47] [OFFBOARDING/CONVERTER] Concluída com código 0.
+[2026-11-10 10:43:47] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Convertendo para Shared Box: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "aline.ferreira@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: ANNA CAROLINE TORRES GAGO (anna.gago@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "anna.gago@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: CAROLINE DE OLIVEIRA LOBO (caroline.lobo@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "caroline.lobo@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: LORRANA CECILIA VITORIANO DE CAMARGO (lorrana.camargo@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "lorrana.camargo@jfi.com.br" já é do tipo
+ "Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "sudario.junior@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: VINICIUS PLIXO CORREA (vinicius.correa@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "vinicius.correa@jfi.com.br" já é do tipo
+ "Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+RESUMO CONVERSÃO: 6 sucesso(s), 0 falha(s).
+[2026-11-10 10:44:05] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:44:17] [OFFBOARDING/REVOGAR] Falhou com código 1.
+[2026-11-10 10:44:17] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---
+Processando revogação para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+Processando revogação para: ANNA CAROLINE TORRES GAGO (anna.gago@jfi.com.br)...
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 2.
+Processando revogação para: CAROLINE DE OLIVEIRA LOBO (caroline.lobo@jfi.com.br)...
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 3.
+Processando revogação para: LORRANA CECILIA VITORIANO DE CAMARGO (lorrana.camargo@jfi.com.br)...
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 3.
+Processando revogação para: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 2.
+Processando revogação para: VINICIUS PLIXO CORREA (vinicius.correa@jfi.com.br)...
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+https://graph.microsoft.com/v1.0/$metadata#users/$e...      
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 3.
+RESUMO REVOGAÇÃO: 5 sucesso(s), 1 falha(s).
+[2026-11-10 10:46:45] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:46:45] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:46:50] Cruzamento concluído: 1 conta(s) para processamento e 85 para verificação manual.
+[2026-11-10 10:46:54] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:46:55] [OFFBOARDING/CONVERTER] Concluída com código 0.
+[2026-11-10 10:46:56] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:46:57] [OFFBOARDING/REVOGAR] Concluída com código 0.
+[2026-11-10 10:47:15] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:47:15] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:47:20] Cruzamento concluído: 1 conta(s) para processamento e 85 para verificação manual.
+[2026-11-10 10:47:35] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:47:36] [OFFBOARDING/CONVERTER] Concluída com código 0.
+[2026-11-10 10:47:38] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:47:39] [OFFBOARDING/REVOGAR] Concluída com código 0.
+[2026-11-10 10:49:37] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:49:37] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:49:42] Cruzamento concluído: 2 conta(s) para processamento e 84 para verificação manual.
+[2026-11-10 10:49:48] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:49:49] [OFFBOARDING/CONVERTER] Concluída com código 0.
+[2026-11-10 10:49:50] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:49:51] [OFFBOARDING/REVOGAR] Concluída com código 0.
+[2026-11-10 10:50:04] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:50:04] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:50:10] Cruzamento concluído: 2 conta(s) para processamento e 84 para verificação manual.
+[2026-11-10 10:50:45] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:50:45] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:50:50] Cruzamento concluído: 2 conta(s) para processamento e 84 para verificação manual.
+[2026-11-10 10:50:56] [OFFBOARDING/CONVERTER] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:51:04] [OFFBOARDING/CONVERTER] Concluída com código 0.
+[2026-11-10 10:51:04] [OFFBOARDING/CONVERTER] Saída:
+--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---
+Convertendo para Shared Box: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "aline.ferreira@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+Convertendo para Shared Box: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+AVISO: Não foi possível converter a caixa de correio, pois a caixa de correio "sudario.junior@jfi.com.br" já é do tipo 
+"Shared".
+  -> SUCESSO: caixa confirmada como compartilhada.
+RESUMO CONVERSÃO: 2 sucesso(s), 0 falha(s).
+[2026-11-10 10:51:10] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:51:14] [OFFBOARDING/REVOGAR] Falhou com código 1.
+[2026-11-10 10:51:14] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---
+Processando revogação para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+Processando revogação para: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+RESUMO REVOGAÇÃO: 0 sucesso(s), 2 falha(s).
+[2026-11-10 10:52:02] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:52:02] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:52:06] Cruzamento concluído: 2 conta(s) para processamento e 84 para verificação manual.
+[2026-11-10 10:52:27] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:52:30] [OFFBOARDING/REVOGAR] Falhou com código 1.
+[2026-11-10 10:52:30] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---
+Processando revogação para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+Processando revogação para: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+RESUMO REVOGAÇÃO: 0 sucesso(s), 2 falha(s).
+[2026-11-10 10:56:17] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:56:21] [OFFBOARDING/REVOGAR] Falhou com código 1.
+[2026-11-10 10:56:21] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---
+Processando revogação para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+Processando revogação para: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta.
+RESUMO REVOGAÇÃO: 0 sucesso(s), 2 falha(s).
+[2026-11-10 10:58:11] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 10:58:11] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 10:58:16] Cruzamento concluído: 2 conta(s) para processamento e 84 para verificação manual.
+[2026-11-10 10:58:19] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 10:58:23] [OFFBOARDING/REVOGAR] Falhou com código 1.
+[2026-11-10 10:58:23] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---
+Processando revogação para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta. | Detalhe do Graph: {"error":{"code":"Request_BadRequest","message":"When trying to read a null collection parameter value in JSON Light, a node of type 'PrimitiveValue' with the value '6fd2c87f-b296-42f0-b197-1e91e994b900' was read from the JSON reader; however, a primitive 'null' value was expected.","innerError":{"date":"2026-11-10T13:58:23","request-id":"34016345-071c-4db1-af69-ae6d7b0d5220","client-request-id":"34016345-071c-4db1-af69-ae6d7b0d5220"}}}
+Processando revogação para: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> ERRO na etapa 'remover licenças': O servidor remoto retornou um erro: (400) Solicitação Incorreta. | Detalhe do Graph: {"error":{"code":"Request_BadRequest","message":"When trying to read a null collection parameter value in JSON Light, a node of type 'PrimitiveValue' with the value '6fd2c87f-b296-42f0-b197-1e91e994b900' was read from the JSON reader; however, a primitive 'null' value was expected.","innerError":{"date":"2026-11-10T13:58:24","request-id":"46a3f949-aff6-4ec6-8116-591bd47680bf","client-request-id":"46a3f949-aff6-4ec6-8116-591bd47680bf"}}}
+RESUMO REVOGAÇÃO: 0 sucesso(s), 2 falha(s).
+[2026-11-10 11:00:15] [OFFBOARDING/REVOGAR] Iniciando execução para os usuários do CSV.
+[2026-11-10 11:00:20] [OFFBOARDING/REVOGAR] Concluída com código 0.
+[2026-11-10 11:00:20] [OFFBOARDING/REVOGAR] Saída:
+--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---
+Processando revogação para: ALINE APARECIDA BRISOLLA FERREIRA (aline.ferreira@jfi.com.br)...
+
+
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 1.
+Processando revogação para: SUDARIO BARBOZA DE MIRANDA JUNIOR (sudario.junior@jfi.com.br)...
+@odata.context                                         value
+--------------                                         -----
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+
+https://graph.microsoft.com/v1.0/$metadata#Edm.Boolean  True
+  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: 1.
+RESUMO REVOGAÇÃO: 2 sucesso(s), 0 falha(s).
+[2026-11-10 11:00:33] Dados do SIGO carregados: 4958 registros.
+[2026-11-10 11:00:33] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 11:00:38] Cruzamento concluído: 0 conta(s) para processamento e 86 para verificação manual.
+[2026-11-10 11:14:28] Dados do SIGO carregados: 4959 registros.
+[2026-11-10 11:14:28] Autenticando no Microsoft Entra ID (Graph API)...
+[2026-11-10 11:14:33] Cruzamento concluído: 0 conta(s) para processamento e 30 para verificação manual.

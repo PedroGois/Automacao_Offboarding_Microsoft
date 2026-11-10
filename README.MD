@@ -45,18 +45,22 @@ Aplicação de apoio ao offboarding de colaboradores. Consulta o SIGO e o Micros
 Na raiz do repositório:
 
 ```powershell
-python -m streamlit run app.py
+streamlit run app.py
 ```
 
 No painel:
 
-1. **Buscar dados:** autentica no SIGO, carrega os usuários do Entra ID e mostra o resultado de cada etapa.
-2. **Processar e cruzar:** apresenta as contas prontas para processamento e os casos que precisam de verificação manual.
-3. **Executar ações, nesta ordem:**
-   - **Converter em Caixa Compartilhada:** conecta ao Exchange Online e executa `Set-Mailbox -Type Shared`.
-   - **Revogar, Bloquear e Remover Licenças:** usa o Microsoft Graph para bloquear o login, revogar sessões e remover licenças.
+1. **Buscar e Cruzar Dados:** consulta SIGO e Entra ID, cruza os usuários e gera as listas para processamento e auditoria.
+2. **Inspecionar visualmente:** revise a tabela de usuários prontos para offboarding e a tabela de casos para verificação manual.
+3. **Executar ações separadamente, nesta ordem:**
+   - **Converter para Caixa Compartilhada:** conecta ao Exchange Online e executa `Set-Mailbox -Type Shared`, preservando a caixa e seu histórico.
+   - **Revogar, Bloquear e Remover Licenças:** usa o Microsoft Graph para bloquear o login, revogar sessões e remover as licenças atribuídas.
 
 As ações são independentes: a segunda não é executada automaticamente após a primeira. Confirme que a conversão foi concluída antes de remover as licenças.
+
+O painel aciona as funções `ConvertTo-SharedMailbox` e `Revoke-AndBlockUser` de `scripts/powershell/offboarding.ps1` pelas ações `converter` e `revogar`, respectivamente.
+
+O módulo `scripts/python/collect_data.py` pode ser importado pelo painel. Ele disponibiliza `carregar_configuracoes()`, `obter_dados_sigo()`, `obter_usuarios_microsoft()` e `cruzar_dados(df_sigo, df_ms)`. A última função retorna os dois DataFrames do cruzamento e grava os CSVs de processamento e auditoria manual.
 
 ## Resultados e logs
 

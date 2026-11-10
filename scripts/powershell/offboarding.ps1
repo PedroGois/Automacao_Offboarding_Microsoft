@@ -1,10 +1,11 @@
-param(
+﻿param(
     [Parameter(Mandatory=$true)]
     [ValidateSet("converter", "revogar")]
     [string]$Acao
 )
 
 $ErrorActionPreference = "Stop"
+[Console]::InputEncoding = [System.Text.Encoding]::UTF8
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 $OutputEncoding = [System.Text.Encoding]::UTF8
 
@@ -29,25 +30,22 @@ $ClientSecret = $env:AZURE_CLIENT_SECRET
 $ExchangeOrganization = $env:EXCHANGE_ORGANIZATION
 $CertificateThumbprint = $env:AZURE_CERTIFICATE_THUMBPRINT
 
-if ($Acao -eq "converter") {
-    $ExchangeVariaveisAusentes = @()
-    if (-not $ClientId) { $ExchangeVariaveisAusentes += "AZURE_CLIENT_ID" }
-    if (-not $ExchangeOrganization) { $ExchangeVariaveisAusentes += "EXCHANGE_ORGANIZATION" }
-    if (-not $CertificateThumbprint) { $ExchangeVariaveisAusentes += "AZURE_CERTIFICATE_THUMBPRINT" }
-    if ($ExchangeVariaveisAusentes.Count -gt 0) {
-        Write-Output "ERRO: Conversão não iniciada. Configure no .env: $($ExchangeVariaveisAusentes -join ', ')."
-        exit 1
-    }
+# Validação unificada de variáveis de acordo com a ação
+$VariaveisAusentes = @()
+if ($Acao -eq "revogar") {
+    if (-not $TenantId) { $VariaveisAusentes += "AZURE_TENANT_ID" }
+    if (-not $ClientId) { $VariaveisAusentes += "AZURE_CLIENT_ID" }
+    if (-not $ClientSecret) { $VariaveisAusentes += "AZURE_CLIENT_SECRET" }
 }
-else {
-    $GraphVariaveisAusentes = @()
-    if (-not $TenantId) { $GraphVariaveisAusentes += "AZURE_TENANT_ID" }
-    if (-not $ClientId) { $GraphVariaveisAusentes += "AZURE_CLIENT_ID" }
-    if (-not $ClientSecret) { $GraphVariaveisAusentes += "AZURE_CLIENT_SECRET" }
-    if ($GraphVariaveisAusentes.Count -gt 0) {
-        Write-Output "ERRO: Revogação não iniciada. Configure no .env: $($GraphVariaveisAusentes -join ', ')."
-        exit 1
-    }
+elseif ($Acao -eq "converter") {
+    if (-not $ClientId) { $VariaveisAusentes += "AZURE_CLIENT_ID" }
+    if (-not $ExchangeOrganization) { $VariaveisAusentes += "EXCHANGE_ORGANIZATION" }
+    if (-not $CertificateThumbprint) { $VariaveisAusentes += "AZURE_CERTIFICATE_THUMBPRINT" }
+}
+
+if ($VariaveisAusentes.Count -gt 0) {
+    Write-Output "ERRO: Ação '$Acao' não iniciada. Configure no .env: $($VariaveisAusentes -join ', ')."
+    exit 1
 }
 
 if (-not (Test-Path $CsvPath)) {
@@ -55,58 +53,59 @@ if (-not (Test-Path $CsvPath)) {
     exit 0
 }
 
-$UsuariosDesligados = Import-Csv -Path $CsvPath -Delimiter ";"
+$UsuariosDesligados = Import-Csv -Path $CsvPath -Delimiter ";" -Encoding UTF8
 if (-not $UsuariosDesligados -or $UsuariosDesligados.Count -eq 0) {
     Write-Host "Nenhum usuário no CSV para processar." -ForegroundColor Yellow
     exit 0
 }
 
+# Obter Token da Graph API (Necessário apenas para revogação/bloqueio)
 if ($Acao -eq "revogar") {
-# Obter Token da Graph API
-$Body = @{
-    client_id     = $ClientId
-    scope         = "https://graph.microsoft.com/.default"
-    client_secret = $ClientSecret
-    grant_type    = "client_credentials"
-}
-$TokenUrl = "https://login.microsoftonline.com/$TenantId/oauth2/v2.0/token"
-try {
-    $TokenResponse = Invoke-RestMethod -Method Post -Uri $TokenUrl -Body $Body -ErrorAction Stop
-}
-catch {
-    Write-Output "ERRO: Falha na autenticação do Microsoft Graph. Confira tenant, client ID e validade do segredo. Detalhe: $($_.Exception.Message)"
-    exit 1
-}
-$AccessToken = $TokenResponse.access_token
-if (-not $AccessToken) {
-    Write-Output "ERRO: A resposta de autenticação do Graph não contém access_token."
-    exit 1
-}
+    $Body = @{
+        client_id     = $ClientId
+        scope         = "https://graph.microsoft.com/.default"
+        client_secret = $ClientSecret
+        grant_type    = "client_credentials"
+    }
+    $TokenUrl = "https://login.microsoftonline.com/$TenantId/oauth2/v2.0/token"
+    try {
+        $TokenResponse = Invoke-RestMethod -Method Post -Uri $TokenUrl -Body $Body -ErrorAction Stop
+    }
+    catch {
+        Write-Output "ERRO: Falha na autenticação do Microsoft Graph. Confira tenant, client ID e validade do segredo. Detalhe: $($_.Exception.Message)"
+        exit 1
+    }
+    $AccessToken = $TokenResponse.access_token
+    if (-not $AccessToken) {
+        Write-Output "ERRO: A resposta de autenticação do Graph não contém access_token."
+        exit 1
+    }
 
-$Headers = @{
-    "Authorization" = "Bearer $AccessToken"
-    "Content-Type"  = "application/json"
-}
+    $Headers = @{
+        "Authorization" = "Bearer $AccessToken"
+        "Content-Type"  = "application/json"
+    }
 }
 
 # ==========================================
 # FUNÇÃO 1: Converter para Caixa Compartilhada
 # ==========================================
-function Invoke-ConvertToSharedBox {
+function ConvertTo-SharedMailbox {
     Write-Host "--- INICIANDO CONVERSÃO PARA CAIXA COMPARTILHADA ---" -ForegroundColor Cyan
     $Sucessos = 0
     $Falhas = 0
 
-    # Conexão no Exchange Online via ExchangeOnlineManagement
+    # Conexão no Exchange Online via Certificado (App-Only - Sem intervenção humana)
     try {
         if (-not (Get-Module -ListAvailable ExchangeOnlineManagement)) {
             throw "O módulo ExchangeOnlineManagement não está instalado. Instale-o antes de executar a conversão."
         }
         Import-Module ExchangeOnlineManagement
+
         Connect-ExchangeOnline -Organization $ExchangeOrganization -AppId $ClientId -CertificateThumbprint $CertificateThumbprint -ShowBanner:$false
     }
     catch {
-        throw "Falha ao conectar no Exchange Online. Verifique certificado, permissões Exchange.ManageAsApp e organização. Detalhe: $($_.Exception.Message)"
+        throw "Falha ao conectar no Exchange Online com certificado. Verifique permissões Exchange.ManageAsApp, Thumbprint e a organização. Detalhe: $($_.Exception.Message)"
     }
 
     foreach ($usuario in $UsuariosDesligados) {
@@ -136,7 +135,7 @@ function Invoke-ConvertToSharedBox {
 # ==========================================
 # FUNÇÃO 2: Revogar, Bloquear e Remover Licenças
 # ==========================================
-function Invoke-RevokeAndBlock {
+function Revoke-AndBlockUser {
     Write-Host "--- INICIANDO BLOQUEIO E REMOÇÃO DE LICENÇAS ---" -ForegroundColor Cyan
     $Sucessos = 0
     $Falhas = 0
@@ -165,17 +164,39 @@ function Invoke-RevokeAndBlock {
             Invoke-RestMethod -Method Post -Uri "https://graph.microsoft.com/v1.0/users/$UserId/revokeSignInSessions" -Headers $Headers
 
             $Etapa = "remover licenças"
-            if ($GraphUser.assignedLicenses.Count -gt 0) {
-                $skuIdsToRemove = $GraphUser.assignedLicenses | Select-Object -ExpandProperty skuId
-                $LicenseBody = @{ addLicenses = @(); removeLicenses = $skuIdsToRemove } | ConvertTo-Json -Depth 3
-                Invoke-RestMethod -Method Post -Uri "https://graph.microsoft.com/v1.0/users/$UserId/assignLicense" -Headers $Headers -Body $LicenseBody
+            $TotalLicencasRemovidas = 0
+            if ($null -ne $GraphUser.assignedLicenses -and $GraphUser.assignedLicenses.Count -gt 0) {
+                # Mapeia e força explicitamente para um array de strings (GUIDs)
+                $skuIdsToRemove = [string[]]@($GraphUser.assignedLicenses | Where-Object { $_.skuId -and $_.skuId -ne "00000000-0000-0000-0000-000000000000" } | Select-Object -ExpandProperty skuId)
+                
+                if ($skuIdsToRemove.Count -gt 0) {
+                    # Monta o payload JSON explicitamente estruturado
+                    $LicensePayload = @{
+                        addLicenses    = @()
+                        removeLicenses = $skuIdsToRemove
+                    }
+                    
+                    # Converte para JSON com profundidade adequada
+                    $LicenseBody = $LicensePayload | ConvertTo-Json -Depth 5 -Compress
+                    
+                    Invoke-RestMethod -Method Post -Uri "https://graph.microsoft.com/v1.0/users/$UserId/assignLicense" -Headers $Headers -Body $LicenseBody | Out-Null
+                    $TotalLicencasRemovidas = $skuIdsToRemove.Count
+                }
             }
             $Sucessos++
             Write-Host "  -> SUCESSO: login bloqueado, sessões revogadas; licenças removidas: $($GraphUser.assignedLicenses.Count)." -ForegroundColor Green
         }
         catch {
             $Falhas++
-            Write-Host "  -> ERRO na etapa '$Etapa': $($_.Exception.Message)" -ForegroundColor Red
+            # Captura a resposta completa do erro HTTP do Microsoft Graph
+            $ErrorDetails = $_.Exception.Response
+            if ($null -ne $ErrorDetails) {
+                $reader = New-Object System.IO.StreamReader($ErrorDetails.GetResponseStream())
+                $responseBody = $reader.ReadToEnd()
+                Write-Host "  -> ERRO na etapa '$Etapa': $($_.Exception.Message) | Detalhe do Graph: $responseBody" -ForegroundColor Red
+            } else {
+                Write-Host "  -> ERRO na etapa '$Etapa': $($_.Exception.Message)" -ForegroundColor Red
+            }
         }
     }
 
@@ -185,8 +206,8 @@ function Invoke-RevokeAndBlock {
 
 # Executa com base no argumento recebido do Streamlit/Python
 if ($Acao -eq "converter") {
-    Invoke-ConvertToSharedBox
+    ConvertTo-SharedMailbox
 }
 elseif ($Acao -eq "revogar") {
-    Invoke-RevokeAndBlock
+    Revoke-AndBlockUser
 }
